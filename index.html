@@ -2,33 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Display IP Address</title>
+  <title>Device IP Address</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 50px;
+      background-color: #f9f9f9;
     }
     #ip {
-      font-size: 24px;
-      color: #333;
+      font-size: 28px;
+      color: #2c3e50;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Your IP Address</h1>
-  <div id="ip">Loading...</div>
-
-  <script>
-    fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('ip').textContent = data.ip;
-      })
-      .catch(error => {
-        document.getElementById('ip').textContent = 'Unable to fetch IP address.';
-        console.error('Error fetching IP:', error);
-      });
-  </script>
+  <h1>Our Device IP Address</h1>
+  <div id="ip">192.168.8.1</div>
 </body>
 </html>
