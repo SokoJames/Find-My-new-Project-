@@ -2,61 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CTF Challenge IP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CTF Challenge Access</title>
   <style>
     body {
-      background-color: #000;
-      color: #33ff33;
-      font-family: "Courier New", Courier, monospace;
-      text-align: center;
-      padding-top: 100px;
       margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px #33ff33;
+      font-size: 3em;
+      margin-bottom: 0.5em;
+      color: #00ffd0;
     }
 
-    #ip {
-      font-size: 36px;
+    .ip-box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5em 2.5em;
+      border-radius: 10px;
+      border: 1px solid #00ffd0;
+      box-shadow: 0 0 20px rgba(0, 255, 208, 0.2);
+      font-size: 1.8em;
       font-weight: bold;
-      margin-bottom: 20px;
-      color: #ff3333;
-      text-shadow: 0 0 5px #ff3333;
+      color: #00ffd0;
+      animation: pulse 2s infinite ease-in-out;
     }
 
-    .note {
-      font-size: 20px;
-      margin-top: 20px;
-      color: #888;
-    }
-
-    .blinker {
-      display: inline-block;
-      animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 255, 208, 0.2);
+      }
       50% {
-        opacity: 0;
+        box-shadow: 0 0 30px rgba(0, 255, 208, 0.5);
       }
     }
 
+    .note {
+      margin-top: 1.5em;
+      font-size: 1.1em;
+      color: #bbbbbb;
+    }
+
     footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #444;
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      .ip-box {
+        font-size: 1.3em;
+        padding: 1em 1.5em;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🚩 Welcome to the CTF Challenge</h1>
-  <div id="ip">Connect to: <span style="color:#33ffff;">192.168.8.1</span><span class="blinker">_</span></div>
-  <div class="note">Make sure you're on the CTF Wi-Fi or VPN</div>
+  <h1>🚩 KMU CTF 2025 Access Point</h1>
+  <div class="ip-box">192.168.8.1</div>
+  <div class="note">Connect to the challenge server via your CTF network</div>
+
   <footer>
-    Hosted by The ICT Society · KMU CTF 2025
+    Hosted by The ICT Society · Secure. Learn. Compete.
   </footer>
 </body>
 </html>
